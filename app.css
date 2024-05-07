@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.calendar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #AEC0C2;
+    border-radius: 8px;
+    width: 875px;
+}
+
+table {
+    padding: 0 0 0px 0;
+}
+
+.calendarPageTitle {
+    color: #253031;
+    font-size: 2em;
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 850px;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+.weekHeader {
+    height: 50px;
+    background-color: #253031;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+th {
+    font-weight: 400;
+}
+
+.monthHeader {
+    text-align: left;
+    font-family: "Jost", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 30px;
+    color: #F5F5F5;
+    padding: 10px 30px 10px 30px;
+    width: 850px;
+    display: flex;
+}
+
+.monthHeaderOne {
+    flex: 1 1;
+}
+
+.monthHeaderTwo {
+    align-self: center;
+}
+
+
+.numberDay:hover {
+    outline: solid 2px #AEC0C2;
+    outline-offset: -2px;
+}
+
+.numberDay {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    height: 110px;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 110px;
+    color: #253031;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.selectedNumberDay {
+    text-align: center;
+    height: 110px;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #CCCCCC;
+    width: 110px;
+    color: #253031;
+}
+
+.nonActiveDay {
+    background-color: rgb(223, 223, 223);
+}
+
+.selectSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    font-style: normal;
+    width: 850px;
+    padding: 20px 0 20px 0;
+}
+
+.selectStyling {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+
+.selectStyling label {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin-right: 10px;
+    color: #253031;
+    font-size: 18px;
+}
+
+.selectStyling select {
+    margin-right: 10px;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    width: 200px;
+    font-size: 16px;
+    background-color: rgb(223, 223, 223);
+    color: #253031;
+    border: none;
+    border-radius: 5px;
+}
+
+.secondSelectStyling select {
+    margin-right: 10px;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    width: 200px;
+    font-size: 16px;
+    background-color: rgb(223, 223, 223);
+    color: #253031;
+    border: none;
+    border-radius: 5px;
+}
+
+.twoSelects {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.timeForm {
+    width: 150px;
+}
+.timeForm form {
+    width: 35px;
+    height: 25px;
+    display: inline-block;
+    padding-right: 38px;
+    margin-top: 0px;
+}
+
+.timeForm input {
+    width: 35px;
+    height: 23px;
+    display: inline-block;
+    background-color: rgb(223, 223, 223);
+    color: #253031;
+    border: none;
+    border-radius: 5px;
+}
+
+.timeForm input::placeholder {
+    color: #253031;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+}
+
+.timeForm input:focus::placeholder {
+    color: transparent;
+}
+
+.timeFormLabel {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin-right: 2px;
+    color: #253031;
+    font-size: 18px;
+}
+
+.exerciseButtonDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: 27px;
+}
+
+.addExerciseButton {
+    width: 75px;
+    height: 25px;
+    background-color: #253031;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    font-family: "Jost", sans-serif;
+}
+
+.addExerciseButton:hover {
+    color: #ffffff;
+    font-weight: 00;
+    background-color: #090B0C;
+}
+
+.exerciseIcons {
+    width: 22px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+p .calendarNumber {
+    height: 10px;
+}
+
+.iconDivs {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6px;
+    height: 45px;
+}
+
+.totalTime {
+    height: 45px;
+    padding-top: 20px;
+    font-size: 0.95em;
+}
+
+#totalTimeDisplay {
+    color: #253031;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#totalTimeNumbersDisplay {
+    color: #253031;
+    font-weight: 600;
+}
+
+.clearButtonDiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.clearButton {
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95px;
+    height: 25px;
+    background-color: #253031;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: "Jost", sans-serif;
+}
+
+.clearButton:hover {
+    color: #ffffff;
+    font-weight: 00;
+    background-color: #090B0C;
+}
+
+@media screen and (max-width: 900px) {
+    .calendar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 95vw;
+    }
+    table {
+        width: 93%;
+    }
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+    .numberDay {
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    .nonActiveDay {
+        display: none;
+    }
+    .calendarNumber {
+        justify-content: flex-;
+    }
+    .totalTime {
+        padding-top: 5px;
+    }
+    .iconDivs {
+        padding-top: 8px;
+    }
+    .monthHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .selectSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+    }
+    .timeForm {
+        display: flex;
+        align-content: flex-start;
+        justify-content: flex-start;
+        width: 90vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .activitySelectLabel{
+        display: none;
+    }
+    .timeFormLabel{
+        display: none;
+    }
+    .twoSelects {
+        display: flex;
+        align-content: flex-start;
+        justify-content: flex-start;
+        width: 90vw;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .exerciseButtonDiv {
+        padding-left: 0px;
+    }
+    .calendarPageTitle {
+        justify-content: flex-start;
+        width: 90vw;
+    }
+    .monthHeader {
+        width: 85vw;
+    }
+    .monthHeaderOne {
+        font-size: 25px;
+    }
+    #totalTimeDisplay {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    #firstSelect {
+        width: auto;
+        padding: 0 0 0 0;
+    }
+    #secondSelect {
+        width: auto;
+        padding: 0 0 0 0;
+    }
+    #activity-select {
+        width: 180px;
+    }
+    .secondSelectStyling select{
+        width: 150px;
+    }
+    option {
+        font-size: 3em;
+    }
+    .exerciseButtonDiv {
+        display: flex;
+        justify-content: flex-start;
+        width: 90vw;
+        margin-top: 10px;
+    }
+
+}

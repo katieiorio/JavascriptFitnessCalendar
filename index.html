@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Calendar</title>
+</head>
+
+<body>
+    <div class="calendarPageTitle">
+        <h1>Fitness Calendar</h1>
+    </div>
+
+    <div class="selectSection">
+        <div class="twoSelects">
+            <div class="selectStyling" id="firstSelect">
+                <label class="activitySelectLabel" for="activity-select">Choose your activity:</label>
+                <select class="firstSelect" name="activity" id="activity-select">
+                    <option value="">Activity</option>
+                    <option value="endurance">Endurance</option>
+                    <option value="strength">Strength</option>
+                    <option value="balance">Balance</option>
+                    <option value="flexibility">Flexibility</option>
+                </select>
+            </div>
+            <div class="secondSelects" id="secondSelect">
+                <div class="secondSelectStyling" id="none_addition" style="display: block;">
+                    <!-- Content to display when Interlink is selected -->
+                    <select id="none-select">
+                        <option value="">--</option>
+                    </select>
+                </div>
+                <div class="secondSelectStyling" id="endurance_addition" style="display: none;">
+                    <!-- Content to display when Interlink is selected -->
+                    <select id="endurance-select">
+                        <option value="default">Select</option>
+                        <option value="endurance1">Running</option>
+                        <option value="endurance2">Walking</option>
+                        <option value="endurance3">Biking</option>
+                        <option value="endurance4">Swimming</option>
+                        <option value="endurance5">Other</option>
+                    </select>
+                </div>
+                <div class="secondSelectStyling" id="strength_addition" style="display: none;">
+                    <!-- Content to display when Interlink is selected -->
+                    <select name="strength" id="strength-select">
+                        <option value="default">Select</option>
+                        <option value="strength1">Lifting Weights</option>
+                        <option value="strength2">Resistance Bands</option>
+                        <option value="strength3">Other</option>
+                    </select>
+                </div>
+                <div class="secondSelectStyling" id="balance_addition" style="display: none;">
+                    <!-- Content to display when Interlink is selected -->
+                    <select name="balance" id="balance-select">
+                        <option value="default">Select</option>
+                        <option value="balance1">Yoga</option>
+                        <option value="balance2">Pilates</option>
+                        <option value="balance3">Tai Chi</option>
+                        <option value="balance4">Other</option>
+                    </select>
+                </div>
+                <div class="secondSelectStyling" id="flexibility_addition" style="display: none;">
+                    <!-- Content to display when Interlink is selected -->
+                    <select name="flexibility" id="flexibility-select">
+                        <option value="default">Select</option>
+                        <option value="flexibility1">Neck</option>
+                        <option value="flexibility2">Back</option>
+                        <option value="flexibility3">Legs</option>
+                        <option value="flexibility4">Arms</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="timeForm" id="timeForm">
+            <label class="timeFormLabel" for="hourInput">Time:</label>
+            <form action="">
+                <input type="text" placeholder="hr." name="hoursInput" id="hoursInput">
+            </form>
+            <form action="">
+                <input type="text" placeholder="min." name="minutesInput" id="minutesInput">
+            </form>
+        </div>
+        <div class="exerciseButtonDiv">
+            <button class="addExerciseButton" id="addButton" type="button">Add</button>
+        </div>
+    </div>
+
+
+    <div class="calendar">
+        <div class="monthHeader">
+            <h2 class="monthHeaderOne">February 2024</h2>
+            <p class="monthHeaderTwo" id="totalTimeDisplay">Total Monthly Exercise: <span id="totalTimeNumbersDisplay">0
+                    hrs. 0 mins.</span></p>
+        </div>
+        <table>
+            <thead>
+                <tr class="weekHeader">
+                    <th>Sunday</td>
+                    <th>Monday</td>
+                    <th>Tuesday</td>
+                    <th>Wednesday</td>
+                    <th>Thursday</td>
+                    <th>Friday</td>
+                    <th>Saturday</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="numberDay"></td>
+                    <td class="numberDay"></td>
+                    <td class="numberDay"></td>
+                    <td class="numberDay"></td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>1</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>2</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>3</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>4</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>5</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>6</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>7</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>8</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>9</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>10</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>11</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>12</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>13</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>14</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>15</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>16</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>17</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>18</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>19</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>20</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>21</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>22</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>23</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>24</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>25</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>26</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>27</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>28</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay">
+                        <div class="iconDivs">
+                        </div>
+                        <div class="calendarNumber">
+                            <p>29</p>
+                        </div>
+                        <div class="totalTime">
+                            <p></p>
+                        </div>
+                    </td>
+                    <td class="numberDay"></td>
+                    <td class="numberDay"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clearButtonDiv">
+            <button class="clearButton" id="clearButtonId">Clear Day</button>
+        </div>
+    </div>
+    <!-- <div class="image">
+            <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div> -->
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>
